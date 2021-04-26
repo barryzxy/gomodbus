@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
+	modbus "github.com/barryzxy/gomodbus"
 	"github.com/goburrow/serial"
-	modbus "github.com/thinkgos/gomodbus/v2"
 )
 
 func main() {

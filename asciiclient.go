@@ -76,7 +76,7 @@ func (sf *protocolFrame) encodeASCIIFrame(slaveID byte, pdu ProtocolDataUnit) ([
 	return append(frame, []byte(asciiEnd)...), nil
 }
 
-// decode extracts slaveID & PDU from ASCII frame and verify LRC.
+// decode extracts slaveID & PDU from ASCII frame and a11verfy LRC.
 func decodeASCIIFrame(adu []byte) (uint8, []byte, error) {
 	if len(adu) < asciiAduMinSize+6 { // Minimum size (including address, function and LRC)
 		return 0, nil, fmt.Errorf("modbus: response length '%v' does not meet minimum '%v'", len(adu), 9)
